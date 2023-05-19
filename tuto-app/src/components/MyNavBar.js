@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function MyNavBar() {
 	// const styles = {
 	// 	navBar: {
@@ -9,16 +11,19 @@ export default function MyNavBar() {
 
 	return (
 		<nav
+			className='navBar'
 			style={{
 				display: "flex",
 				flexDirection: "row",
 				gap: "10px",
 				justifyContent: "center",
 			}}>
-			{/* <div style={{}}> */}
-			<button>Home</button>
-			<button>Tic-Tac-Toe</button>
-			{/* </div> */}
+			<button className='home-btn'>
+				<Link to='/'>Home</Link>
+			</button>
+			<button className='tictactoe-btn'>
+				<Link to='/tictactoe'>Tic-Tac-Toe</Link>
+			</button>
 		</nav>
 	);
 }

@@ -1,25 +1,19 @@
 import "./App.css";
-import MyButton from "./components/MyButton.js";
-import MyList from "./components/MyList";
-import MyNavBar from "./components/MyNavBar";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BaseLayout from "./pages/layouts/BaseLayout";
+import HomePage from "./pages/HomePage";
+import TicTacToePage from "./pages/TicTacToePage";
 
 function App() {
-	const [count, setCount] = useState(0);
-
-	function handleClick() {
-		setCount(count + 1);
-	}
-
 	return (
-		<div className='App'>
-			<MyNavBar />
-			<h1>My App</h1>
-			<p>{count}</p>
-			<MyButton onClick={handleClick} />
-			<MyButton onClick={handleClick} />
-			<MyList />
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path='/' element={<BaseLayout />}>
+					<Route index element={<HomePage />} />
+					<Route path='tictactoe' element={<TicTacToePage />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 

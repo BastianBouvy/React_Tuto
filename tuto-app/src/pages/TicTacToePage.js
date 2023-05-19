@@ -1,11 +1,11 @@
-import MyNavBar from "./components/MyNavBar";
+import MyTicTacToe from "../components/MyTicTacToe";
 
 function TicTacToePage() {
 	return (
-		<div className='TicTacToe'>
-			<MyNavBar />
-			<h1>Tic-Tac-Toe</h1>
-		</div>
+		<main style={{ textAlign: "center" }} className='TicTacToe'>
+			<h1 className='title'>Tic-Tac-Toe</h1>
+			<MyTicTacToe />
+		</main>
 	);
 }
 
